@@ -1,9 +1,12 @@
-import Message from './Message'
+// import Message from './Message'
+import ListGroup from "./components/ListGroup";
 
-function App()
-{
-  // Always close your react components, in this case using "<Message></Message>" or using the self-closing syntax, "<Message /></"
-  return <div><Message /></div>;
+function App() {
+  return (
+    <div>
+      <ListGroup />
+    </div>
+  );
 }
 
 export default App;
