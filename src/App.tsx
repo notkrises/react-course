@@ -1,12 +1,13 @@
-import Like from "./components/Like/Like";
+import { useState } from "react";
+import NavBar from "./components/NavBar";
+import Cart from "./components/Cart";
 
 function App() {
+  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
   return (
     <div>
-      <Like
-        onLike={() => console.log("Liked! :D")}
-        onDislike={() => console.log("Disliked :(")}
-      />
+      <NavBar cartItemsCount={cartItems.length} />
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
     </div>
   );
 }
