@@ -48,8 +48,10 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           type="text"
           className="form-control"
         />
-        {errors.description && (
+        {errors.description ? (
           <p className="text-danger">{errors.description.message}</p>
+        ) : (
+          <p className="text-sedondary">Add a description</p>
         )}
       </div>
       <div className="mb-3">
@@ -62,8 +64,10 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           type="number"
           className="form-control"
         />
-        {errors.amount && (
+        {errors.amount ? (
           <p className="text-danger">{errors.amount.message}</p>
+        ) : (
+          <p className="text-secondary">Select a price</p>
         )}
       </div>
       <div className="mb-3">
@@ -78,8 +82,10 @@ const ExpenseForm = ({ onSubmit }: Props) => {
             </option>
           ))}
         </select>
-        {errors.category && (
+        {errors.category ? (
           <p className="text-danger">{errors.category.message}</p>
+        ) : (
+          <p className="text-secondary">Choose a category</p>
         )}
       </div>
       <button className="btn btn-primary">Submit</button>
