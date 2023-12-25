@@ -51,7 +51,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
         {errors.description ? (
           <p className="text-danger">{errors.description.message}</p>
         ) : (
-          <p className="text-sedondary">Add a description</p>
+          <p className="text-secondary">Add a description</p>
         )}
       </div>
       <div className="mb-3">
