@@ -1,9 +1,19 @@
+import { useState } from "react";
+import Alert from "./components/Alert";
 import Button from "./components/Button";
 
 function App() {
+  const [alertVisible, setAlertVisibilty] = useState(false);
+
   return (
     <div>
-      <Button color="primary" onClick={() => console.log("clicked")}>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibilty(false)} color="danger">
+          {" "}
+          HOLY POG ITS WORKING{" "}
+        </Alert>
+      )}
+      <Button color="primary" onClick={() => setAlertVisibilty(true)}>
         The pog Button
       </Button>
     </div>
