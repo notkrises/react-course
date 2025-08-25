@@ -1,9 +1,19 @@
-import Like from "./components/Like/Like";
+import { useState } from "react";
 
 function App() {
+  const [drink, setDrink] = useState({
+    title: "Americano",
+    price: 5,
+  });
+
+  const handleClick = () => {
+    setDrink({ ...drink, price: 6 });
+  };
+
   return (
     <div>
-      <Like onClick={() => console.log("Clicked")}></Like>
+      {drink.price}
+      <button onClick={handleClick}> Click me </button>
     </div>
   );
 }
