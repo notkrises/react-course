@@ -1,20 +1,25 @@
 import { useState } from "react";
 
 function App() {
-  const [customer, setCustomer] = useState({
-    name: "John",
-    address: { city: "Acton", zipCode: 01720 },
-  });
+  const [tags, setTags] = useState(["happy", "cheerful"]);
 
   const handleClick = () => {
-    // avoid nested objects as they are much more difficult to update
-    setCustomer({
-      ...customer,
-      address: { ...customer.address, zipCode: 01721 },
-    });
+    // add an object
+    setTags([...tags, "exciting"]);
+
+    // remove an object
+    setTags(tags.filter((tag) => tag !== "happy"));
+
+    // Update
+    setTags(tags.map((tag) => (tag === "happy" ? "happiness" : tag)));
   };
 
-  return <div></div>;
+  return (
+    <div>
+      {" "}
+      <button onClick={handleClick}>Click Me</button>
+    </div>
+  );
 }
 
 export default App;
