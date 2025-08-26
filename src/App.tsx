@@ -1,21 +1,20 @@
 import { useState } from "react";
 
 function App() {
-  const [drink, setDrink] = useState({
-    title: "Americano",
-    price: 5,
+  const [customer, setCustomer] = useState({
+    name: "John",
+    address: { city: "Acton", zipCode: 01720 },
   });
 
   const handleClick = () => {
-    setDrink({ ...drink, price: 6 });
+    // avoid nested objects as they are much more difficult to update
+    setCustomer({
+      ...customer,
+      address: { ...customer.address, zipCode: 01721 },
+    });
   };
 
-  return (
-    <div>
-      {drink.price}
-      <button onClick={handleClick}> Click me </button>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
