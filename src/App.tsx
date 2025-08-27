@@ -1,10 +1,9 @@
-import { useState } from "react";
-import ExpandableText from "./components/ExpandableText";
+import Form from "./components/Form";
 
 function App() {
   return (
     <div>
-      <ExpandableText maxChars={15}>Hello World</ExpandableText>
+      <Form />
     </div>
   );
 }
